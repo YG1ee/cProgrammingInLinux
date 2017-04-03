@@ -42,7 +42,7 @@ int main(int ac, char *av[]) {
                         fputc(ch, stdout);              // 읽은 문자 표준 출력으로 보내기
                     }
                     fclose(fp);
-        	}
+        	    }
             }
         }
 	    else if(av[1][1] == 'C') {                      // 대문자로 바꿔서 출력
