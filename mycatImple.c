@@ -33,7 +33,7 @@ int main(int ac, char *av[]) {
      */
 	    if(av[1][1] == 'c') {                      // 소문자로 바꿔서 출력
             for(i = 2; i < ac; i++) {
-                if( (fp = fopen(av[i], "r")) == NULL)
+                if( (fp = fopen(av[i], "r")) == NULL )
                         printf("Can't open %s\n", av[i]);
                 else {
                     while( (ch = fgetc(fp)) != EOF) {   // fp 파일로부터 한 문자 읽기
@@ -85,4 +85,3 @@ int main(int ac, char *av[]) {
 
     return 0;
 }
-
