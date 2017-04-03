@@ -33,10 +33,8 @@ int main(int ac, char *av[]) {
      */
 	    if(av[1][1] == 'c') {                      // 소문자로 바꿔서 출력
             for(i = 2; i < ac; i++) {
-                if( (fp = fopen(av[i], "r")) == NULL) {
+                if( (fp = fopen(av[i], "r")) == NULL)
                         printf("Can't open %s\n", av[i]);
-                        fclose(fp);
-                }
                 else {
                     while( (ch = fgetc(fp)) != EOF) {   // fp 파일로부터 한 문자 읽기
                         if( (ch >= 65) & (ch <= 90) )
@@ -44,15 +42,13 @@ int main(int ac, char *av[]) {
                         fputc(ch, stdout);              // 읽은 문자 표준 출력으로 보내기
                     }
                     fclose(fp);
-        	    }
+        	}
             }
         }
 	    else if(av[1][1] == 'C') {                      // 대문자로 바꿔서 출력
             for(i = 2; i < ac; i++) {
-                if( (fp = fopen(av[i], "r")) == NULL) {
+                if( (fp = fopen(av[i], "r")) == NULL)
                         printf("Can't open %s\n", av[i]);
-                        fclose(fp);
-                }
                 else {
                     while( (ch = fgetc(fp)) != EOF) {   // fp 파일로부터 한 문자 읽기
                         if( (ch >= 95) & (ch <= 122) )
@@ -75,10 +71,8 @@ int main(int ac, char *av[]) {
             return -2;
         }
         for(i = 1; i < ac; i++) {
-            if( (fp = fopen(av[i], "r")) == NULL) {
+            if( (fp = fopen(av[i], "r")) == NULL)
                 printf("Can't open %s\n", av[i]);
-                fclose(fp);
-            }
             else {
                 while( (ch = fgetc(fp)) != EOF) {   // fp 파일로부터 한 문자 읽기
                     fputc(ch, stdout);              // 읽은 문자 표준 출력으로 보내기
@@ -91,3 +85,4 @@ int main(int ac, char *av[]) {
 
     return 0;
 }
+
