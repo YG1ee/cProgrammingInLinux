@@ -13,6 +13,9 @@ int main() {
 
         fgets(str, sizeof(str), stdin);
         str[strlen(str) - 1] = 0;
+        for(i = 0; i < strlen(str); i += 1)
+            if(str[i] == ' ')
+                isToken = 1;
 
         /* 입력된 문자열이 없을 경우 */
         if(strlen(str) == 0)
@@ -23,7 +26,7 @@ int main() {
             return 0;
         
         /* 입력된 문자열에 구분자가 있는 경우 */
-        else if(isToken) { 
+        else if (isToken) {
             char *ptr;
             ptr = strtok(str, token);
             printf("arg0: %s\n", ptr);
