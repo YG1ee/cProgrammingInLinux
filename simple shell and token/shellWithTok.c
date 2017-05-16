@@ -11,28 +11,9 @@ int main() {
     while(1) {
         printf("prompt$ ");
 
-        /*
-         * 문자열을 입력 받고, 맨 마지막의 개행문자를
-         * 널문자로 바꾸어 없애는 코드
-         */
         fgets(str, sizeof(str), stdin);
-        for(i = 0; ; i += 1) {
-            if(str[i] == ' ')
-                isToken = 1;
-            if(str[i] == '\n') {
-                str[i] = '\0';
-                break;
-            }
-        }
+        str[strlen(str) - 1] = 0;
 
-        /* 
-         * 더 간결한 코드이지만 아직 이해하지 못함.
-         * 나중을 위해 일단은 주석 처리.
-         * 
-         * if((p=strchr(str, '\n')) != NULL)
-         *     *p = '\0';
-         */
-   
         /* 입력된 문자열이 없을 경우 */
         if(strlen(str) == 0)
             continue;
