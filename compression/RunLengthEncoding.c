@@ -22,7 +22,7 @@ int main(int ac, char *av[]) {
     }
 
     while ((c = fgetc(fp)) != EOF) {
-        unsigned int ccnt = 0;
+        unsigned char ccnt = 0;
         while ((d = fgetc(fp)) != EOF) {
             if (c == d) {
                 ccnt += 1;
@@ -30,16 +30,15 @@ int main(int ac, char *av[]) {
                     break; // MAX VALUE
             }
             else {
-	        ungetc(d, fp);
-		break;
-	    }
-	}
-	putc(ccnt, cfp);
-	putc(c, cfp);
+                ungetc(d, fp);
+                break;
+            }
+        }
+        putc(ccnt, cfp);
+        putc(c, cfp);
     }
     fclose(fp);
     fclose(cfp);
 
     return 0;
 }
-
