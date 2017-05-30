@@ -61,9 +61,9 @@ int main() {
                             int blen = strlen(buf);
                             for(j = 0; j < blen; j += 1) {
                                 if(buf[j] == pattern[state]) {
-                                state += 1;
-                                if(state == plen)
-                                    printf("%s", buf);
+                                    state += 1;
+                                    if(state == plen)
+                                        printf("%s", buf);
                                 }
                                 else if(buf[j] == pattern[state])
                                     state = 1;
